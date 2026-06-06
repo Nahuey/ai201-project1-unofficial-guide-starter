@@ -40,12 +40,12 @@ My domain is going to be things to do around UC San Diego. This knowlegde is val
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size: 650 characters**
+**Chunk size: 1000 characters**
 
-**Overlap: 80 characters**
+**Overlap: 150 characters**
 
 **Reasoning:**
-I will be using recursive chunking because the structure of the urls are full documents and there are many paragraphs for each page. It would not be effective to use fixed size chunking here. I chose 650 characters because thats around how many characters are in a paragraph. As for the overlap, I chose 80 characters because if the chunking sliced the beginning of a paragraph 80 characters would be around a sentence so that it would be able to get the full context of a paragraph.
+I will be using recursive chunking because the structure of the urls are full documents and there are many paragraphs for each page. It would not be effective to use fixed size chunking here. I chose 1000 characters because after testing this is a nice number that captures most of the text. As for the overlap, I chose 150 characters because this will capture parts of the beginning of portions that may have been cut off and give further context within the chunk.
 
 ---
 
