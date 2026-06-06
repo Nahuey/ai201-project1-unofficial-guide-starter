@@ -33,18 +33,19 @@ My domain is going to be things to do around UC San Diego. This knowlegde is val
 
 ---
 
-## Chunking Strategy
+## Chunking Strategy: Recursive chunking
 
 <!-- How will you split documents into chunks?
      State your chunk size (in tokens or characters), overlap size, and explain why those
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size: 650 characters**
 
-**Overlap:**
+**Overlap: 80 characters**
 
 **Reasoning:**
+I will be using recursive chunking because the structure of the urls are full documents and there are many paragraphs for each page. It would not be effective to use fixed size chunking here. I chose 650 characters because thats around how many characters are in a paragraph. As for the overlap, I chose 80 characters because if the chunking sliced the beginning of a paragraph 80 characters would be around a sentence so that it would be able to get the full context of a paragraph.
 
 ---
 
@@ -57,10 +58,13 @@ My domain is going to be things to do around UC San Diego. This knowlegde is val
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
+I will be using the all-MiniLM-L6-v2 via sentence-transformers model.
 
 **Top-k:**
+I will retrieve the top 5 chunks per query because there are many documents and some have overlapping topics in each source.
 
 **Production tradeoff reflection:**
+If cost wasn't a constraint for this project, I would opt to use gemini embedding 2 because it has a higher context window than all-MiniLM-L6-v2. This allows for better chunking of the data which leads to better retrieval. I would trade the latency of all-MiniLM-L6-v2 for a bit slower gemini embedding 2 because the accuracy of the model is higher.
 
 ---
 
@@ -73,11 +77,11 @@ My domain is going to be things to do around UC San Diego. This knowlegde is val
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | Which floor of Geisel Library is the silent study floor? | The 8th floor of Geisel is considered the silent study floor |
+| 2 | Where is a good elevated spot to watch the sunset near campus? | Gliderport or Sixth College 5th floor|
+| 3 | Are there any museums or aquariums I can visit near campus? | Birch Aquarium or Museum of Contemporary Art |
+| 4 | Where is a good place to run 5-miles without any traffic lights? | Lake Miramar|
+| 5 | Which beaches near campus have concrete fire pits? | La Jolla Shores or Mission Beach |
 
 ---
 
@@ -87,9 +91,9 @@ My domain is going to be things to do around UC San Diego. This knowlegde is val
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. The chunk might cut off crutial information that relates to the question. This will cause the RAG to return partial information cut off from what we actually want
 
-2.
+2. Another challenge could be that there is too much noise. It might hallucinate on a query when asked a question because there is filler in the paragraphs.
 
 ---
 
@@ -101,6 +105,7 @@ My domain is going to be things to do around UC San Diego. This knowlegde is val
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
 
+![Diagram](diagram.png)
 ---
 
 ## AI Tool Plan
@@ -117,6 +122,14 @@ My domain is going to be things to do around UC San Diego. This knowlegde is val
 
 **Milestone 3 — Ingestion and chunking:**
 
+I plan to use Gemini to help me parse through each of the document to generate clean text that I can use for my embedding model. I will also use Gemini to help me implement the chunk_text() function with instructions of what my chunking size and overlap are.
+
+
 **Milestone 4 — Embedding and retrieval:**
 
+I will use Gemini to also help me generate the retrieval of the top-5 closest chunks to the specific query. 
+
+
 **Milestone 5 — Generation and interface:**
+
+I will use Gemini and Claude code to make my interface for this RAG. I will also use Groq for the generation with llama-3.3-70b-versatile
