@@ -9,7 +9,7 @@
 
 ## Domain
 
-<!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+My domain is going to be things to do around UC San Diego. This knowlegde is valuable because new students will want to know where to go and explore. They want to be able to experience San Diego. There is too much information, so having it in one place will be helpful for students. This can also help students that are still deciding if they would like to go to UC San Diego. They can ask about activities and resturants around UC San Diego.
 
 ---
 
@@ -20,16 +20,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Ultimate Guide to UC San Diego | Gives areas to go to around UC San Diego | https://prked.com/post/your-ultimate-guide-to-an-unforgettable-time-around-uc-san-diego |
+| 2 | 26 things to do in San Diego | List of things to do around SD | https://californiathroughmylens.com/things-to-do-in-san-diego/ |
+| 3 | Top 10 Eats Near UCSD | 10 food places near UC San Diego | https://ucsdguardian.org/2024/01/29/top-10-eats-near-ucsd/ |
+| 4 | Reddit San Diego | Favorite beach in San Diego | https://www.reddit.com/r/sandiego/comments/osxcqd/whats_your_favorite_beach_in_san_diego/ |
+| 5 | Study spots | 10 best stpots to study on campus | https://today.ucsd.edu/story/10-best-spots-to-study-on-campus |
+| 6 | Reddit Food San Diego | Best boba places in San Diego | https://www.reddit.com/r/FoodSanDiego/comments/1ior4sy/best_boba_places_in_san_diego/ |
+| 7 | Sunset spots | 5 Best spots to watch the sunset in San Diego | https://soulsummittravel.com/2024/04/30/sunset-spots-san-diego/|
+| 8 | Running trails in SD| Best places to run in San Diego| https://www.chelseyexplores.com/best-places-to-run-in-san-diego/ |
+| 9 | Food places at UC San Diego| Places to Eat at UCSD | https://blink.ucsd.edu/facilities/services/general/personal/dining.html |
+| 10 | Activities at UC San Diego | 15 Ideas for your UC San Diego Bucket List| https://today.ucsd.edu/story/15-ideas-for-your-uc-san-diego-bucket-list |
 
 ---
 
