@@ -61,7 +61,7 @@ I will be using recursive chunking because the structure of the urls are full do
 I will be using the all-MiniLM-L6-v2 via sentence-transformers model.
 
 **Top-k:**
-I will retrieve the top 5 chunks per query because there are many documents and some have overlapping topics in each source.
+I will retrieve the top 4 chunks per query because there are many documents and some have overlapping topics in each source.
 
 **Production tradeoff reflection:**
 If cost wasn't a constraint for this project, I would opt to use gemini embedding 2 because it has a higher context window than all-MiniLM-L6-v2. This allows for better chunking of the data which leads to better retrieval. I would trade the latency of all-MiniLM-L6-v2 for a bit slower gemini embedding 2 because the accuracy of the model is higher.
@@ -78,10 +78,10 @@ If cost wasn't a constraint for this project, I would opt to use gemini embeddin
 | # | Question | Expected answer |
 |---|----------|-----------------|
 | 1 | Which floor of Geisel Library is the silent study floor? | The 8th floor of Geisel is considered the silent study floor |
-| 2 | Where is a good elevated spot to watch the sunset near campus? | Gliderport or Sixth College 5th floor|
+| 2 | What is a good dirt trail to run? | Tecolote |
 | 3 | Are there any museums or aquariums I can visit near campus? | Birch Aquarium or Museum of Contemporary Art |
-| 4 | Where is a good place to run 5-miles without any traffic lights? | Lake Miramar|
-| 5 | Which beaches near campus have concrete fire pits? | La Jolla Shores or Mission Beach |
+| 4 | What is a good place to nap on campus? | Hammock Swings|
+| 5 | Which beaches near campus have fire pits? | La Jolla Shores or Mission Beach |
 
 ---
 

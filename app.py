@@ -1,5 +1,7 @@
 from ingest import load_documents, recursive_chunk_document, semantic_chunk_document
 from retriever import embed_and_store, retrieve, get_collection
+import gradio as gr
+from generator import generate_response
 
 def run_ingestion():
     """
@@ -52,11 +54,29 @@ def run_ingestion():
             "\n⚠️  No chunks produced. Make sure chunk_document() is implemented in ingest.py.\n"
         )
 
+
+def handle_query(query):
+    if not query.strip():
+        return ""
+    retrieved = retrieve(query)
+    answer, sources = generate_response(query, retrieved)
+    return answer, sources
+
+with gr.Blocks() as demo:
+    inp = gr.Textbox(label="Your question")
+    btn = gr.Button("Ask")
+    answer = gr.Textbox(label="Answer", lines=8)
+    sources = gr.Textbox(label="Retrieved from", lines=4)
+    btn.click(handle_query, inputs=inp, outputs=[answer, sources])
+    inp.submit(handle_query, inputs=inp, outputs=[answer, sources])
+
+
 if __name__ == "__main__":
     print("\n" + "="*50)
     print("  Unofficial Guide — starting up")
     print("="*50 + "\n")
     run_ingestion()
-    retrieve("Which floor of Geisel Library is the silent study floor?")
-    retrieve("Where is a good elevated spot to watch the sunset near campus?")
-    retrieve("Which beaches near campus have concrete fire pits?")
+    demo.launch()
+    # retrieve("Which floor of Geisel Library is the silent study floor?")
+    # retrieve("Where is a good elevated spot to watch the sunset near campus?")
+    # retrieve("Which beaches near campus have concrete fire pits?")
