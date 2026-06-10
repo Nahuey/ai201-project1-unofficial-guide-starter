@@ -34,7 +34,6 @@ def run_ingestion():
 
     for doc in documents:
         title = doc["title"]
-        print(title)
         text = doc["text"]
 
         if title in structured_docs:
@@ -77,6 +76,3 @@ if __name__ == "__main__":
     print("="*50 + "\n")
     run_ingestion()
     demo.launch()
-    # retrieve("Which floor of Geisel Library is the silent study floor?")
-    # retrieve("Where is a good elevated spot to watch the sunset near campus?")
-    # retrieve("Which beaches near campus have concrete fire pits?")
